@@ -1,18 +1,18 @@
-package productservice
+package application
 
 import (
 	"go-test/domain"
 )
 
-type ServiceProduct struct {
+type ProductService struct {
 	ProductRepository ProductRepository
 }
 
-func (s *ServiceProduct) GetAllProducts() ([]domain.Product, error) {
+func (s *ProductService) GetAllProducts() ([]domain.Product, error) {
 	return s.ProductRepository.FindAll()
 }
 
-func (s *ServiceProduct) AddProduct(product domain.Product) error {
+func (s *ProductService) AddProduct(product domain.Product) error {
 	return s.ProductRepository.Save(product)
 }
 
